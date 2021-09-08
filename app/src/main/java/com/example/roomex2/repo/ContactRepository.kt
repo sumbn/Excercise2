@@ -30,7 +30,7 @@ class ContactRepository(private val contactDao: ContactDao) {
                 call: Call<List<Contact?>?>,
                 response: Response<List<Contact?>?>
             ) {
-                list.postValue(((response.body() as List<Contact>).toMutableList()))
+                list.postValue(((response.body() as MutableList<Contact>)))
             }
 
             override fun onFailure(call: Call<List<Contact?>?>, t: Throwable) {
